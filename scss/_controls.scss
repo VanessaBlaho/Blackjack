@@ -3,8 +3,21 @@ $green: #54be90;
 $blue: #5782c2;
 $gray: #d3d3d3;
 $shadow: 0 0 6px #333333;
-
-
+@mixin button1{
+  background-color:$blue;
+  width: 95%;
+  color:$white;
+  padding:3%;
+  border-radius: 5%;
+}
+@mixin score{
+  background-color:$white;
+  width: 100%;
+  color:$blue;
+  padding:3%;
+  border-radius: 5%;
+  border-color: $blue;
+}
 html {
     box-sizing: border-box;
   }
@@ -12,4 +25,63 @@ html {
   *:before,
   *:after {
     box-sizing: inherit;
+  }
+  .controls{
+    width: 40%;
+    background-color: white;
+    padding:0%;
+    margin:0%;
+    h1{
+      width: 50%;
+      margin:0;
+      margin-block-start: 0%;
+      margin-block-end: 0%;
+      display:inline;
+    
+    }
+ 
+  }
+  .controls1 {
+@include button1;
+  }
+  .controls_dealer{
+    margin: 20% 5% 5% 5%;
+    .dealer_player{
+      text-align: right;
+      font-weight:bold;
+    }
+    .you_win{
+      text-align: center;
+      font-weight:bold;
+    }
+    .score{
+      @include score
+    }
+  }
+  .controls_player{
+    margin: 20% 5% 5% 5%;
+
+    .dealer_player{
+      text-align: right;
+      font-weight:bold;
+    }
+    .you_win{
+      text-align: center;
+      font-weight:bold;
+    }
+    .score{
+      @include score;
+
+    }
+  }
+
+  .hit_stand{
+    flex-wrap: wrap;
+    // justify-content: center;
+    // align-items: center;
+    // align-content: center;
+    // justify-items: center;
+
+    @include button1;
+    width: 40%;
   }
